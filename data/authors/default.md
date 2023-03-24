@@ -1,11 +1,12 @@
 ---
-name: Alex Ingrams
+name: Vivien Ingrams
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
+occupation: Junior web developper
+company: Freelancer
+email: vivien@gmail.com
 twitter: https://twitter.com/Twitter
 linkedin: https://www.linkedin.com
-github: https://github.com
+github: https://github.com/VIvienIngrams
 ---
-Alex Ingrams is a genius.
+
+Vivien is a dancer turned web developper.
