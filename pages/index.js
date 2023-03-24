@@ -8,26 +8,35 @@ import NewsletterForm from '@/components/NewsletterForm'
 
 const MAX_DISPLAY = 5
 
+import { MDXLayoutRenderer } from '@/components/MDXComponents'
+import { getFileBySlug } from '@/lib/mdx'
+
+const DEFAULT_LAYOUT = 'AuthorLayout'
+
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
-
-  return { props: { posts } }
+  const authorDetails = await getFileBySlug('authors', ['default'])
+  return { props: { posts, authorDetails } }
 }
 
-export default function Home({ posts }) {
+export default function Home({ posts, authorDetails }) {
+  const { mdxSource, frontMatter } = authorDetails
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <MDXLayoutRenderer
+        layout={frontMatter.layout || DEFAULT_LAYOUT}
+        mdxSource={mdxSource}
+        frontMatter={frontMatter}
+      />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest
-          </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"></h1>
+          {/* <p className="text-center text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
-          </p>
+          </p> */}
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        {/* <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary } = frontMatter
@@ -72,9 +81,9 @@ export default function Home({ posts }) {
               </li>
             )
           })}
-        </ul>
+        </ul> */}
       </div>
-      {posts.length > MAX_DISPLAY && (
+      {/* {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
@@ -84,7 +93,7 @@ export default function Home({ posts }) {
             All Posts &rarr;
           </Link>
         </div>
-      )}
+      )} */}
     </>
   )
 }
