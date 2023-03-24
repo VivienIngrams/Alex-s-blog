@@ -18,9 +18,9 @@ export default function Footer() {
           <div>{` • `}</div>
           <Link href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</Link>
         </div>
-        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+        <div className="mb-8 text-center text-sm text-gray-500 dark:text-gray-400">
           <Link href="https://www.universiteitleiden.nl/en/staffmembers/alex-ingrams#tab-1">
-            Leiden University Institute of Public Administration, The Hague
+            Leiden University Institute of Public Administration
           </Link>
         </div>
       </div>
