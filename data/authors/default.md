@@ -1,6 +1,6 @@
 ---
-name: Vivien Ingrams
-avatar: /static/images/avatar.png
+name: Alex Ingrams
+avatar: /static/images/alex.png
 occupation: Professor of Public administration and policy
 company: Leiden University Institute of Public Administration
 email: a.r.ingrams@fgga.leidenuniv.nl

@@ -1,20 +1,20 @@
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
+  title: 'Alex Ingrams',
   author: 'Alex Ingrams',
   headerTitle: 'Alex Ingrams',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description:
+    'I’m an assistant professor in the Institute of Public Administration at Leiden University in the Netherlands. I research the role of transparency and technology in public administration and policy',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
-  image: '/static/images/avatar.png',
+  image: '/static/images/alex.jpg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'a.r.ingrams@fgga.leidenuniv.nl',
   googleScholar: 'https://scholar.google.nl/citations?user=SA91dyQAAAAJ&hl=en',
   twitter: 'https://twitter.com/alexingrams',
   researchGate: 'https://www.researchgate.net/profile/Alex-Ingrams',
-
   linkedin: 'https://www.linkedin.com/in/aringrams/?originalSubdomain=nl',
   locale: 'en-US',
   analytics: {
