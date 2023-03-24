@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Next.js Starter Blog',
   author: 'Alex Ingrams',
-  headerTitle: 'TailwindBlog',
+  headerTitle: 'Alex Ingrams',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'system', // system, dark or light
@@ -10,12 +10,12 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
+  email: 'a.r.ingrams@fgga.leidenuniv.nl',
+  googleScholar: 'https://scholar.google.nl/citations?user=SA91dyQAAAAJ&hl=en',
+  twitter: 'https://twitter.com/alexingrams',
+  researchGate: 'https://www.researchgate.net/profile/Alex-Ingrams',
+
+  linkedin: 'https://www.linkedin.com/in/aringrams/?originalSubdomain=nl',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
