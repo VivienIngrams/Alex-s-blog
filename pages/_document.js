@@ -4,18 +4,19 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="scroll-smooth">
         <Head>
-          <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
+          <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/icons8-alpha-64.png" />
+          {/* <a target="_blank" href="https://icons8.com/icon/43XimWRABNGm/alpha">Alpha</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/static/favicons/favicon-32x32.png"
+            href="/static/favicons/icons8-alpha-64.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/static/favicons/favicon-16x16.png"
+            href="/static/favicons/icons8-alpha-64.png"
           />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
           <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5" />

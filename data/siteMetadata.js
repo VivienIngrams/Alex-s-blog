@@ -8,7 +8,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/static/images/icons8-alpha-64.png',
   image: '/static/images/alex.jpg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'a.r.ingrams@fgga.leidenuniv.nl',
