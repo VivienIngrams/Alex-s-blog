@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Alex Ingrams',
   author: 'Alex Ingrams',
-  headerTitle: 'Alex Ingrams',
+  headerTitle: 'ALEX INGRAMS',
   description:
     'I’m an assistant professor in the Institute of Public Administration at Leiden University in the Netherlands. I research the role of transparency and technology in public administration and policy',
   language: 'en-us',
