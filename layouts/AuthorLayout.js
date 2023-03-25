@@ -16,6 +16,10 @@ export default function AuthorLayout({ children, frontMatter }) {
     cv,
   } = frontMatter
 
+  const openCV = () => {
+    window.open(cv, '_blank')
+  }
+
   return (
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
@@ -49,8 +53,8 @@ export default function AuthorLayout({ children, frontMatter }) {
             <div>{children}</div>
             <div>
               <button
-                className="rounded-full bg-black bg-white px-4 py-2 text-white dark:bg-white dark:text-black"
-                href={cv}
+                className="rounded-lg border-2 px-4 py-2 text-black dark:bg-white dark:text-black"
+                onClick={openCV}
               >
                 CV
               </button>

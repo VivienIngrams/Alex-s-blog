@@ -30,7 +30,9 @@ const LayoutWrapper = ({ children }) => {
             </Link>
           </div>
           <div className="flex items-center text-base leading-5">
-            <div className="hidden sm:block">
+            <div className="">
+              {/* removed  the following class names to keep same, simple nav menu for mobile */}
+              {/* <div className="hidden sm:block"> removed */}
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}
@@ -41,8 +43,8 @@ const LayoutWrapper = ({ children }) => {
                 </Link>
               ))}
             </div>
-            <ThemeSwitch />
-            <MobileNav />
+            {/* <ThemeSwitch />
+            <MobileNav /> */}
           </div>
         </header>
         <main className="mb-auto">{children}</main>
