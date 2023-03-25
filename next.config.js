@@ -85,21 +85,3 @@ module.exports = withBundleAnalyzer({
     return config
   },
 })
-
-module.exports = {
-  // other configuration options
-  async headers() {
-    return [
-      {
-        // allow loading fonts from Google Fonts
-        source: 'https://fonts.googleapis.com',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-          },
-        ],
-      },
-    ]
-  },
-}
