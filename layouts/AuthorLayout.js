@@ -13,6 +13,7 @@ export default function AuthorLayout({ children, frontMatter }) {
     linkedin,
     researchGate,
     googleScholar,
+    cv,
   } = frontMatter
 
   return (
@@ -45,7 +46,15 @@ export default function AuthorLayout({ children, frontMatter }) {
             </div> */}
           </div>
           <div className="prose  max-w-none flex-grow items-center  pt-8 pb-8 text-center dark:prose-dark xl:col-span-2">
-            {children}
+            <div>{children}</div>
+            <div>
+              <button
+                className="rounded-full bg-black bg-white px-4 py-2 text-white dark:bg-white dark:text-black"
+                href={cv}
+              >
+                CV
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -15,6 +15,16 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      // Add the styling for the black pill button
+      borderRadius: {
+        full: '9999px',
+      },
+      backgroundColor: {
+        black: '#000',
+      },
+      textColor: {
+        white: '#fff',
+      },
       spacing: {
         '9/16': '56.25%',
       },
