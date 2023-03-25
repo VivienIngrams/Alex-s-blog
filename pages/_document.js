@@ -5,7 +5,6 @@ class MyDocument extends Document {
       <Html lang="en" className="scroll-smooth">
         <Head>
           <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/icons8-alpha-64.png" />
-          {/* <a target="_blank" href="https://icons8.com/icon/43XimWRABNGm/alpha">Alpha</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
           <link
             rel="icon"
             type="image/png"
@@ -24,6 +23,10 @@ class MyDocument extends Document {
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
           <Main />

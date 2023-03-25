@@ -20,6 +20,10 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        {/* <link
+          href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400&display=swap"
+          rel="stylesheet"
+        /> */}
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
       <Analytics />
