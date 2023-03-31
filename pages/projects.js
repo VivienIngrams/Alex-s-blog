@@ -1,9 +1,67 @@
+import React, { useState, useEffect, useCallback } from 'react'
+
 import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
+// import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
+import AddProject from '@/components/AddProject'
 
 export default function Projects() {
+  const [projects, setprojects] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
+
+  const fetchprojectsHandler = useCallback(async () => {
+    setIsLoading(true)
+    setError(null)
+    try {
+      const response = await fetch(
+        'https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app/project.json'
+      )
+      if (!response.ok) {
+        throw new Error('Something went wrong!')
+      }
+
+      const data = await response.json()
+
+      const projectsData = []
+
+      for (const key in data) {
+        projectsData.push({
+          id: key,
+          title: data[key].title,
+          description: data[key].description,
+          href: data[key].href,
+        })
+      }
+
+      setprojects(projectsData)
+      // console.log(projectsData)
+    } catch (error) {
+      setError(error.message)
+    }
+    setIsLoading(false)
+  }, [])
+
+  useEffect(() => {
+    fetchprojectsHandler()
+  }, [fetchprojectsHandler])
+
+  async function addProjectHandler(project) {
+    const response = await fetch(
+      'https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app/project.json',
+      {
+        method: 'POST',
+        body: JSON.stringify(project),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    )
+    const data = await response.json()
+    // console.log(data)
+  }
+
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
@@ -16,11 +74,12 @@ export default function Projects() {
             {/* Showcase your projects with a hero image (16 x 9) */}
           </p>
         </div>
+        <AddProject onAddProject={addProjectHandler} />
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            {projectsData.map((d) => (
+            {projects.map((d) => (
               <Card
-                key={d.title}
+                key={d.id}
                 title={d.title}
                 description={d.description}
                 // imgSrc={d.imgSrc}
