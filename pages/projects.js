@@ -74,7 +74,7 @@ export default function Projects() {
             {/* Showcase your projects with a hero image (16 x 9) */}
           </p>
         </div>
-        <AddProject onAddProject={addProjectHandler} />
+        {/* <AddProject onAddProject={addProjectHandler} /> */}
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
             {projects.map((d) => (
