@@ -21,20 +21,48 @@ function AddProject(props) {
   }
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className="">
-        <label htmlFor="title">Title</label>
-        <input type="text" id="title" ref={titleRef} />
+    <form className="wrap flex flex-col items-center lg:flex-row" onSubmit={submitHandler}>
+      <div className="m-3">
+        <label className="font-bold" htmlFor="title">
+          Title
+        </label>
+        <input
+          className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+          type="text"
+          id="title"
+          ref={titleRef}
+        />
       </div>
-      <div className="">
-        <label htmlFor="description">Description</label>
-        <textarea rows="5" id="description" ref={descriptionRef}></textarea>
+      <div className="m-3 ">
+        <label className="font-bold" htmlFor="description">
+          Description
+        </label>
+        <textarea
+          className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+          rows="5"
+          id="description"
+          ref={descriptionRef}
+        ></textarea>
       </div>
-      <div className="">
-        <label htmlFor="link">Link</label>
-        <input type="text" id="link" ref={linkRef} />
+      <div className="m-3">
+        <label className="font-bold" htmlFor="link">
+          Link
+        </label>
+        <input
+          className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+          type="text"
+          id="link"
+          ref={linkRef}
+        />
       </div>
-      <button>Add Project</button>
+      <div className="mt-2 w-full items-center rounded-md shadow-sm ">
+        <button
+          className="btn rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0"
+          type="submit"
+        >
+          Add Project
+        </button>
+      </div>
     </form>
   )
 }
