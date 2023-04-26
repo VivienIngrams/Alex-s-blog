@@ -5,6 +5,7 @@ function AddProject(props) {
   const titleRef = useRef('')
   const descriptionRef = useRef('')
   const linkRef = useRef('')
+  const linkTextRef = useRef('')
 
   function submitHandler(event) {
     event.preventDefault()
@@ -15,6 +16,7 @@ function AddProject(props) {
       title: titleRef.current.value,
       description: descriptionRef.current.value,
       href: linkRef.current.value,
+      linkText: linkTextRef.current.value,
     }
 
     props.onAddProject(project)
@@ -54,6 +56,17 @@ function AddProject(props) {
           id="link"
           ref={linkRef}
         />
+      </div>
+      <div className="m-3 ">
+        <label className="font-bold" htmlFor="link-text">
+          Text for link
+        </label>
+        <textarea
+          className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+          rows="1"
+          id="link-text"
+          ref={linkTextRef}
+        ></textarea>
       </div>
       <div className="mt-2 w-full items-center rounded-md shadow-sm ">
         <button

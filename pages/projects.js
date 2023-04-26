@@ -32,6 +32,7 @@ export default function Projects() {
           title: data[key].title,
           description: data[key].description,
           href: data[key].href,
+          linkText: data[key].linkText,
         })
       }
 
@@ -84,6 +85,7 @@ export default function Projects() {
                 description={d.description}
                 // imgSrc={d.imgSrc}
                 href={d.href}
+                linkText={d.linkText}
               />
             ))}
           </div>
