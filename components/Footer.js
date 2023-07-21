@@ -5,7 +5,7 @@ import SocialIcon from '@/components/social-icons'
 export default function Footer() {
   return (
     <footer>
-      <div className="mt-16 flex flex-col items-center">
+      <div className="flex flex-col items-center">
         <div className="mb-3 flex space-x-4">
           <SocialIcon kind="googleScholar" href={siteMetadata.googleScholar} size="6" />
           <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="6" />

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 
 import siteMetadata from '@/data/siteMetadata'
-// import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 import AddProject from '@/components/AddProject'
@@ -37,7 +36,7 @@ export default function Projects() {
       }
 
       setprojects(projectsData)
-      // console.log(projectsData)
+      console.log(projectsData)
     } catch (error) {
       setError(error.message)
     }

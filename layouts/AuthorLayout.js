@@ -23,12 +23,9 @@ export default function AuthorLayout({ children, frontMatter }) {
   return (
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"></h1>
-        </div>
+      <div className="my-auto justify-center divide-y  divide-gray-200 rounded-md border-2 border-yellow-600 bg-white p-10 dark:divide-gray-700">
         <div className="flex-wrap items-center space-y-2 xl:grid xl:grid-cols-4 xl:gap-x-8 xl:space-y-0">
-          <div className="flex flex-col items-center pt-8 xl:col-span-2">
+          <div className="flex flex-col items-center xl:col-span-2">
             <Image
               src={avatar}
               alt="avatar"
@@ -41,19 +38,12 @@ export default function AuthorLayout({ children, frontMatter }) {
             </h3>
             <div className="text-center text-gray-500 dark:text-gray-400">{occupation}</div>
             <div className="text-center text-gray-500 dark:text-gray-400">{company}</div>
-            {/* <div className="flex space-x-3 pt-6">
-              <SocialIcon kind="mail" href={`mailto:${email}`} />
-              <SocialIcon kind="googleScholar" href={googleScholar} />
-              <SocialIcon kind="linkedin" href={linkedin} />
-              <SocialIcon kind="twitter" href={twitter} />
-              <SocialIcon kind="researchGate" href={researchGate} />
-            </div> */}
           </div>
           <div className="prose  max-w-none flex-grow items-center  pt-8 pb-8 text-center dark:prose-dark xl:col-span-2">
             <div>{children}</div>
             <div>
               <button
-                className="rounded-lg border-2 px-4 py-2 text-black dark:bg-white dark:text-black"
+                className="rounded-lg border-2 border-yellow-600 bg-neutral-200 px-4 py-2 text-black dark:bg-white dark:text-black"
                 onClick={openCV}
               >
                 CV

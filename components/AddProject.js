@@ -23,60 +23,65 @@ function AddProject(props) {
   }
 
   return (
-    <form className="wrap flex flex-col items-center lg:flex-row" onSubmit={submitHandler}>
-      <div className="m-3">
-        <label className="font-bold" htmlFor="title">
-          Title
-        </label>
-        <input
-          className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
-          type="text"
-          id="title"
-          ref={titleRef}
-        />
-      </div>
-      <div className="m-3 ">
-        <label className="font-bold" htmlFor="description">
-          Description
-        </label>
-        <textarea
-          className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
-          rows="5"
-          id="description"
-          ref={descriptionRef}
-        ></textarea>
-      </div>
-      <div className="m-3">
-        <label className="font-bold" htmlFor="link">
-          Link
-        </label>
-        <input
-          className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
-          type="text"
-          id="link"
-          ref={linkRef}
-        />
-      </div>
-      <div className="m-3 ">
-        <label className="font-bold" htmlFor="link-text">
-          Text for link
-        </label>
-        <textarea
-          className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
-          rows="1"
-          id="link-text"
-          ref={linkTextRef}
-        ></textarea>
-      </div>
-      <div className="mt-2 w-full items-center rounded-md shadow-sm ">
-        <button
-          className="btn rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0"
-          type="submit"
-        >
-          Add Project
-        </button>
-      </div>
-    </form>
+    <div className="flex flex-col justify-around sm:flex-row">
+      <form onSubmit={submitHandler}>
+        <h2 className="p-4 text-center text-2xl font-bold uppercase text-black">
+          Add research project
+        </h2>
+        <div className="flex flex-col items-end ">
+          <div className="p-5">
+            <label className="p-2 font-bold font-normal text-black" htmlFor="title">
+              Title
+            </label>
+            <input
+              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              type="text"
+              id="title"
+              ref={titleRef}
+            />
+          </div>
+          <div className="p-5 ">
+            <label className="p-2 font-bold font-normal text-black" htmlFor="description">
+              Description
+            </label>
+            <textarea
+              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              rows="5"
+              id="description"
+              ref={descriptionRef}
+            ></textarea>
+          </div>
+          <div className="p-5 ">
+            <label className="p-2 font-bold font-normal text-black" htmlFor="link">
+              Link
+            </label>
+            <input
+              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              type="text"
+              id="link"
+              ref={linkRef}
+            />
+          </div>
+          <div className="p-5 ">
+            <label className="p-2 font-bold font-normal text-black" htmlFor="link-text">
+              Text for link
+            </label>
+            <textarea
+              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              rows="1"
+              id="link-text"
+              ref={linkTextRef}
+            ></textarea>
+          </div>
+
+          <div className="m-10 rounded-2xl bg-neutral-400 p-2">
+            <button className="rounded-2xl text-center" type="submit">
+              Add Project
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
   )
 }
 
