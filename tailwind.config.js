@@ -35,7 +35,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['Khand', ...defaultTheme.fontFamily.sans],
+        khand: ['Khand', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: colors.teal,

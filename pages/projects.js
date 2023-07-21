@@ -60,7 +60,7 @@ export default function Projects() {
       }
     )
     const data = await response.json()
-    // console.log(data)
+    console.log(data)
   }
 
   return (
@@ -71,11 +71,9 @@ export default function Projects() {
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Current Research
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {/* Showcase your projects with a hero image (16 x 9) */}
-          </p>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400"></p>
         </div>
-        {/* <AddProject onAddProject={addProjectHandler} /> */}
+        <AddProject onAddProject={addProjectHandler} />
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
             {projects.map((d) => (
@@ -83,7 +81,6 @@ export default function Projects() {
                 key={d.id}
                 title={d.title}
                 description={d.description}
-                // imgSrc={d.imgSrc}
                 href={d.href}
                 linkText={d.linkText}
               />
