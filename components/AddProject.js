@@ -25,12 +25,12 @@ function AddProject(props) {
   return (
     <div className="flex flex-col justify-around sm:flex-row">
       <form onSubmit={submitHandler}>
-        <h2 className="p-4 text-center text-2xl font-bold uppercase text-black">
+        <h2 className="p-4 text-center text-2xl font-bold uppercase text-neutral-500">
           Add research project
         </h2>
         <div className="flex flex-col items-end ">
           <div className="p-5">
-            <label className="p-2 font-bold font-normal text-black" htmlFor="title">
+            <label className="p-2 font-bold  font-normal text-black" htmlFor="title">
               Title
             </label>
             <input
@@ -74,8 +74,8 @@ function AddProject(props) {
             ></textarea>
           </div>
 
-          <div className="m-10 rounded-2xl bg-neutral-400 p-2">
-            <button className="rounded-2xl text-center" type="submit">
+          <div className="m-10 rounded-2xl bg-yellow-600 p-2">
+            <button className="rounded-2xl text-center text-black" type="submit">
               Add Project
             </button>
           </div>

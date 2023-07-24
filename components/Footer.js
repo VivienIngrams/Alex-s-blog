@@ -13,9 +13,7 @@ export default function Footer() {
           <SocialIcon kind="researchGate" href={siteMetadata.researchGate} size="6" />
           <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
         </div>
-        <div className="mb-2 flex flex-col items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{siteMetadata.author}</div>
-          <div>{` • `}</div>
+        <div className="mb-2 flex flex-col items-center space-x-2 text-sm text-yellow-800 dark:text-gray-400">
           <Link href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</Link>
         </div>
         <div className="mb-8 text-center text-sm text-gray-500 dark:text-gray-400">

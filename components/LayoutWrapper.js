@@ -9,7 +9,7 @@ import Footer from './Footer'
 const LayoutWrapper = ({ children }) => {
   return (
     <SectionContainer>
-      <div className="flex h-screen flex-col justify-between">
+      <div className="flex h-screen flex-col justify-between text-yellow-600">
         <header className="flex w-full items-center justify-between py-10">
           <div>
             <Link href="/" aria-label={siteMetadata.headerTitle}>
@@ -33,7 +33,7 @@ const LayoutWrapper = ({ children }) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="-lime-800 p-1 font-medium dark:text-gray-100 sm:p-4"
+                  className="p-1 font-medium uppercase text-yellow-600 dark:text-gray-100 sm:p-4 sm:text-2xl"
                 >
                   {link.title}
                 </Link>
