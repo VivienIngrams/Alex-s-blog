@@ -1,7 +1,7 @@
 ---
 name: Alex Ingrams
 avatar: /static/images/alex.png
-occupation: Professor of Public administration and policy
+occupation: Professor of Public Administration and Policy
 company: Leiden University Institute of Public Administration
 email: a.r.ingrams@fgga.leidenuniv.nl
 twitter: https://twitter.com/alexingrams
