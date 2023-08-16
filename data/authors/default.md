@@ -1,5 +1,5 @@
 ---
-name: Alex Ingrams
+name: Alex Ingrams.
 avatar: /static/images/alex2.png
 occupation: Professor of Public Administration and Policy
 company: Leiden University Institute of Public Administration
@@ -11,4 +11,4 @@ researchGate: https://www.researchgate.net/profile/Alex-Ingrams
 cv: /static/cv_alex.pdf
 ---
 
-I’m an assistant professor in the Institute of Public Administration at Leiden University in the Netherlands. I research the role of transparency and technology in public administration and policy.
+Assistant professor in the Institute of Public Administration at Leiden University, researching the role of transparency and technology in public administration and policy.

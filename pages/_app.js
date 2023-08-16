@@ -3,6 +3,8 @@ import '@/css/prism.css'
 import 'katex/dist/katex.css'
 
 import '@fontsource/inter/variable-full.css'
+import '@fontsource-variable/playfair-display'
+import '@fontsource/khand'
 
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'

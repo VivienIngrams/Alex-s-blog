@@ -35,6 +35,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
+        playfair: ['Playfair Display Variable', ...defaultTheme.fontFamily.sans],
         khand: ['Khand', ...defaultTheme.fontFamily.sans],
       },
       colors: {

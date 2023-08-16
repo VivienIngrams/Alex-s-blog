@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Alex Ingrams',
   headerTitle: 'ALEX INGRAMS',
   description:
-    'I’m an assistant professor in the Institute of Public Administration at Leiden University in the Netherlands. I research the role of transparency and technology in public administration and policy',
+    'Assistant professor in the Institute of Public Administration at Leiden University, researching the role of transparency and technology in public administration and policy',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',

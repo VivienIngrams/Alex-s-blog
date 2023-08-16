@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
-        <body className="bg-neutral-200 font-khand text-black antialiased">
+        <body className="bg-neutral-200 text-black antialiased">
           <Main />
           <NextScript />
         </body>
