@@ -14,7 +14,9 @@ function AddProject(props) {
   return (
     <div className="flex flex-col justify-around sm:flex-row">
       <form onSubmit={submitHandler}>
-        <h2 className="p-4 text-center text-2xl font-bold uppercase text-neutral-500">Login</h2>
+        <h2 className="p-4 text-center font-khand text-2xl font-bold text-neutral-500">
+          Access Admin Page
+        </h2>
         <div className="flex flex-col items-end ">
           <div className="p-5">
             <label className="p-2 font-bold  font-normal text-black" htmlFor="email">
@@ -41,7 +43,7 @@ function AddProject(props) {
 
           <div className="m-10 rounded-2xl bg-yellow-600 p-2">
             <button className="rounded-2xl text-center text-black" type="submit">
-              Login
+              LOGIN
             </button>
           </div>
         </div>

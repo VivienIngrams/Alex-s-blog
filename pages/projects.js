@@ -65,13 +65,13 @@ export default function Projects() {
   return (
     <>
       <PageSEO title={`Projects - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        {/* <div className="flex justify-center space-y-2 pt-6 pb-8 md:space-y-5"> */}
-        {/* <h1 className="inline-block rounded-md bg-green-900 p-5 text-center text-xl font-normal uppercase leading-9 tracking-tight text-neutral-100 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-3xl md:leading-14">
+      <div className="divide-y divide-gray-200 ">
+        <div className="flex justify-center space-y-2 pt-6 pb-8 md:space-y-5">
+          <h1 className="inline-block text-center font-playfair text-2xl leading-9 tracking-tight text-black sm:text-4xl sm:leading-10 md:text-3xl md:leading-14">
             Current Research
-          </h1> */}
-        {/* <p className="text-lg leading-7 text-gray-500 dark:text-gray-400"></p>
-        </div> */}
+          </h1>
+          <p className="text-lg leading-7 text-gray-500 "></p>
+        </div>
         {/* <AddProject onAddProject={addProjectHandler} /> */}
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
