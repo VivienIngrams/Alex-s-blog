@@ -14,23 +14,13 @@ export default function AuthorLayout({ children, frontMatter }) {
     <>
       <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
       <div className="bg-neutral-200">
-        <div className="flex-col items-center space-y-2  xl:gap-x-8 xl:space-y-0">
-          <div className=" flex flex-col items-center xl:col-span-2 ">
-            {/* <Image
-              src={avatar}
-              alt="avatar"
-              width="100px"
-              height="120px"
-              className="h-50 w-50"
-              style={{ verticalAlign: 'top', objectFit: 'cover !important' }}
-            /> */}
-            <h3 className="p-10  font-playfair text-6xl leading-8 tracking-tight text-black md:mt-20">
+        <div className="flex-col items-center space-y-2 ">
+          <div className=" flex flex-col items-end xl:col-span-2 ">
+            <h3 className=" pt-10 font-playfair text-6xl leading-8 tracking-tight text-black md:pt-40">
               {name}
             </h3>
-            {/* <div className="m-3 text-center text-gray-500 dark:text-gray-400">{occupation}</div>
-            <div className="text-center uppercase text-green-800 dark:text-gray-400">{company}</div> */}
           </div>
-          <div className="prose max-w-none flex-grow pt-8 text-center  xl:col-span-2">
+          <div className="prose max-w-none pt-2 text-right md:ml-20 md:pl-20 md:pb-10">
             <div>{children}</div>{' '}
           </div>
           <div className="flex-grow items-center text-center xl:col-span-2">

@@ -18,7 +18,8 @@ export default function Footer() {
         </div>
         <div className="mb-8 text-center text-sm font-medium text-gray-600 ">
           <Link href="https://www.universiteitleiden.nl/en/staffmembers/alex-ingrams#tab-1">
-            Leiden University Institute of Public Administration, The Netherlands
+            Leiden University Institute of Public Administration
+            <p>The Netherlands</p>
           </Link>
         </div>
       </div>
