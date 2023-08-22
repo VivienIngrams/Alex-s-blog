@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useRef } from 'react'
 
 function AddProject(props) {
@@ -25,16 +24,16 @@ function AddProject(props) {
   return (
     <div className="flex flex-col justify-around sm:flex-row">
       <form onSubmit={submitHandler}>
-        <h2 className="p-4 text-center text-2xl font-bold uppercase text-neutral-500">
-          Add research project
+        <h2 className="p-4 text-center font-khand text-2xl font-bold text-neutral-500">
+          Add Research Project
         </h2>
         <div className="flex flex-col items-end ">
           <div className="p-5">
-            <label className="p-2 font-bold  font-normal text-black" htmlFor="title">
+            <label className="sticky p-2 font-bold font-normal text-black" htmlFor="title">
               Title
             </label>
             <input
-              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
               type="text"
               id="title"
               ref={titleRef}
@@ -45,7 +44,7 @@ function AddProject(props) {
               Description
             </label>
             <textarea
-              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
               rows="5"
               id="description"
               ref={descriptionRef}
@@ -56,7 +55,7 @@ function AddProject(props) {
               Link
             </label>
             <input
-              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
               type="text"
               id="link"
               ref={linkRef}
@@ -67,7 +66,7 @@ function AddProject(props) {
               Text for link
             </label>
             <textarea
-              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
               rows="1"
               id="link-text"
               ref={linkTextRef}

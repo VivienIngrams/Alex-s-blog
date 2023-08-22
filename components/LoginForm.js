@@ -1,14 +1,42 @@
 /* eslint-disable prettier/prettier */
 import React, { useRef } from 'react'
+import { initializeApp } from 'firebase/app'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
-function AddProject(props) {
+const firebaseConfig = {
+  apiKey: 'AIzaSyB7XnDjM6cA1Us4p9PpzgX6tFyFZHmpmJI',
+  authDomain: 'projects-cec6a.firebaseapp.com',
+  databaseURL: 'https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app',
+  projectId: 'projects-cec6a',
+  storageBucket: 'projects-cec6a.appspot.com',
+  messagingSenderId: '815842606771',
+  appId: '1:815842606771:web:16cd1350c43358171abac6',
+}
+
+const app = initializeApp(firebaseConfig)
+const auth = getAuth()
+
+function LoginForm(props) {
   const emailRef = useRef('')
   const passwordRef = useRef('')
 
   function submitHandler(event) {
     event.preventDefault()
 
+    const email = emailRef.current.value
+    const password = passwordRef.current.value
     // could add validation here...
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user
+        // ...
+        console.log('signed in?')
+      })
+      .catch((error) => {
+        const errorCode = error.code
+        const errorMessage = error.message
+      })
   }
 
   return (
@@ -23,7 +51,7 @@ function AddProject(props) {
               Email
             </label>
             <input
-              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
               type="email"
               id="email"
               ref={emailRef}
@@ -34,7 +62,7 @@ function AddProject(props) {
               Password
             </label>
             <input
-              className="w-72 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
               type="password"
               id="password"
               ref={passwordRef}
@@ -43,7 +71,7 @@ function AddProject(props) {
 
           <div className="m-10 rounded-2xl bg-yellow-600 p-2">
             <button className="rounded-2xl text-center text-black" type="submit">
-              LOGIN
+              Login
             </button>
           </div>
         </div>
@@ -52,4 +80,4 @@ function AddProject(props) {
   )
 }
 
-export default AddProject
+export default LoginForm
