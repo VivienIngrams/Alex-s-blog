@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useRef } from 'react'
 import { initializeApp } from 'firebase/app'
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB7XnDjM6cA1Us4p9PpzgX6tFyFZHmpmJI',
@@ -14,7 +14,7 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
-const auth = getAuth()
+const auth = getAuth(app)
 
 function LoginForm(props) {
   const emailRef = useRef('')
@@ -25,17 +25,25 @@ function LoginForm(props) {
 
     const email = emailRef.current.value
     const password = passwordRef.current.value
-    // could add validation here...
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user
-        // ...
-        console.log('signed in?')
+        console.log(user)
+
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            let authorized = true
+          } else {
+            let authorized = false
+          }
+        })
       })
       .catch((error) => {
         const errorCode = error.code
         const errorMessage = error.message
+        console.log(errorMessage)
       })
   }
 
