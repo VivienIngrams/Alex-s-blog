@@ -1,8 +1,14 @@
+import { useState } from 'react'
+
 import LoginForm from '@/components/LoginForm'
 import AddProject from '@/components/AddProject'
 
 function LoginPage() {
-  let content = <LoginForm />
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  function loginHandler(loginState) {
+    setLoggedIn(loginState)
+  }
 
   async function addProjectHandler(project) {
     const response = await fetch(
@@ -21,9 +27,8 @@ function LoginPage() {
 
   return (
     <>
-      {content}
-      {/* <LoginForm /> */}
-      {/* <AddProject onAddProject={addProjectHandler} /> */}
+      {!loggedIn && <LoginForm onLogin={loginHandler} />}
+      {loggedIn && <AddProject onAddProject={addProjectHandler} />}
     </>
   )
 }

@@ -34,9 +34,7 @@ function LoginForm(props) {
 
         onAuthStateChanged(auth, (user) => {
           if (user) {
-            let authorized = true
-          } else {
-            let authorized = false
+            props.onLogin(true)
           }
         })
       })
