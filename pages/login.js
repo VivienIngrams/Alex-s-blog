@@ -5,6 +5,7 @@ import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'firebas
 
 import LoginForm from '@/components/LoginForm'
 import AddProject from '@/components/AddProject'
+import EditProjects from '@/components/EditProjects'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB7XnDjM6cA1Us4p9PpzgX6tFyFZHmpmJI',
@@ -20,7 +21,7 @@ const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 
 function LoginPage() {
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(<LoginForm onLogin={loginHandler} />)
 
   async function loginHandler(email, password) {
     signInWithEmailAndPassword(auth, email, password)
@@ -28,7 +29,12 @@ function LoginPage() {
         // Signed in
         const user = userCredential.user
         console.log(user)
-        setLoggedIn(true)
+        setLoggedIn(
+          <>
+            <AddProject onAddProject={addProjectHandler} />
+            <EditProjects />
+          </>
+        )
       })
       .catch((error) => {
         const errorCode = error.code
@@ -67,9 +73,12 @@ function LoginPage() {
 
   return (
     <>
-      {!loggedIn && <LoginForm onLogin={loginHandler} />}
-      {loggedIn && <AddProject onAddProject={addProjectHandler} />}
+      {loggedIn}
+      {/* {!loggedIn && <LoginForm onLogin={loginHandler} />}
+      {loggedIn && <AddProject onAddProject={addProjectHandler} />} */}
+      {/* {loggedIn && <EditProjects />} */}
     </>
   )
 }
+
 export default LoginPage

@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 import React, { useRef, useState } from 'react'
 
-function AddProject(props) {
+function EditProjects(props) {
   const [message, setMessage] = useState(null)
 
   const titleRef = useRef('')
@@ -8,40 +9,16 @@ function AddProject(props) {
   const linkRef = useRef('')
   const linkTextRef = useRef('')
 
-  const [project, setProject] = useState({
-    title: '',
-    description: '',
-    href: '',
-    linkText: '',
-  })
-
   function submitHandler(event) {
     event.preventDefault()
 
-    const enteredProject = {
-      title: titleRef.current.value,
-      description: descriptionRef.current.value,
-      href: linkRef.current.value,
-      linkText: linkTextRef.current.value,
-    }
-
-    props.onAddProject(enteredProject)
-
     setMessage(true)
-
-    setProject({
-      title: '',
-      description: '',
-      href: '',
-      linkText: '',
-    })
   }
-
   return (
     <div className="flex flex-col justify-around sm:flex-row">
       <form onSubmit={submitHandler}>
         <h2 className="p-4 text-center font-khand text-2xl font-bold text-neutral-500">
-          Add Research Project
+          Edit Research Projects
         </h2>
         {message && (
           <div className="text-center">
@@ -58,8 +35,8 @@ function AddProject(props) {
               type="text"
               id="title"
               ref={titleRef}
-              value={project.title}
-              onChange={(event) => setProject({ ...project, title: event.target.value })}
+              // value={project.title}
+              // onChange={(event) => setProject({ ...project, title: event.target.value })}
             />
           </div>
           <div className="p-5 ">
@@ -71,8 +48,8 @@ function AddProject(props) {
               rows="5"
               id="description"
               ref={descriptionRef}
-              value={project.description}
-              onChange={(event) => setProject({ ...project, description: event.target.value })}
+              // value={project.description}
+              // onChange={(event) => setProject({ ...project, description: event.target.value })}
             ></textarea>
           </div>
           <div className="p-5 ">
@@ -84,8 +61,8 @@ function AddProject(props) {
               type="text"
               id="link"
               ref={linkRef}
-              value={project.href}
-              onChange={(event) => setProject({ ...project, href: event.target.value })}
+              // value={project.href}
+              // onChange={(event) => setProject({ ...project, href: event.target.value })}
             />
           </div>
           <div className="p-5 ">
@@ -97,14 +74,19 @@ function AddProject(props) {
               rows="1"
               id="link-text"
               ref={linkTextRef}
-              value={project.linkText}
-              onChange={(event) => setProject({ ...project, linkText: event.target.value })}
+              // value={project.linkText}
+              // onChange={(event) => setProject({ ...project, linkText: event.target.value })}
             ></textarea>
           </div>
 
           <div className="m-10 rounded-2xl bg-yellow-600 p-2">
             <button className="rounded-2xl text-center text-black" type="submit">
-              Add Project
+              Edit Project
+            </button>
+          </div>
+          <div className="m-10 rounded-2xl p-2">
+            <button className="rounded-2xl text-center" type="submit">
+              Delete Project
             </button>
           </div>
         </div>
@@ -113,4 +95,4 @@ function AddProject(props) {
   )
 }
 
-export default AddProject
+export default EditProjects
