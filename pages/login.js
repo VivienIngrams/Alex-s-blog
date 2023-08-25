@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
+import { initializeApp } from 'firebase/app'
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+
 import LoginForm from '@/components/LoginForm'
 import AddProject from '@/components/AddProject'
-import { initializeApp } from 'firebase/app'
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB7XnDjM6cA1Us4p9PpzgX6tFyFZHmpmJI',
@@ -35,21 +36,33 @@ function LoginPage() {
         console.log(errorMessage)
       })
   }
-
   async function addProjectHandler(project) {
-    const response = await fetch(
-      'https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app/project.json',
-      {
-        method: 'POST',
-        body: JSON.stringify(project),
-        headers: {
-          'Content-Type': 'application/json',
-          // 'Authorization': `Bearer ${userId}`,
-        },
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const idToken = await user.getIdToken()
+
+        const response = await fetch(
+          'https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app/project.json',
+          {
+            method: 'POST',
+            body: JSON.stringify(project),
+            headers: {
+              // 'Authorization': `Bearer ${idToken}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        )
+
+        if (response.ok) {
+          const data = await response.json()
+          console.log(data)
+        } else {
+          console.log('Error:', response.statusText)
+        }
+      } else {
+        console.log('User is not authenticated')
       }
-    )
-    const data = await response.json()
-    console.log(data)
+    })
   }
 
   return (
