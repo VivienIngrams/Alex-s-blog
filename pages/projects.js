@@ -6,7 +6,7 @@ import { PageSEO } from '@/components/SEO'
 import Link from 'next/link'
 
 export default function Projects() {
-  const [projects, setprojects] = useState([])
+  const [projects, setProjects] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -35,7 +35,7 @@ export default function Projects() {
         })
       }
 
-      setprojects(projectsData)
+      setProjects(projectsData)
       console.log(projectsData)
     } catch (error) {
       setError(error.message)
@@ -57,7 +57,8 @@ export default function Projects() {
           </h1>
           <p className="text-lg leading-7 text-gray-500 "></p>
         </div>
-
+        {isLoading && <p>Loading...</p>}
+        {error && <p>{error}</p>}
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
             {projects.map((d) => (
