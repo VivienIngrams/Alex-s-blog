@@ -1,20 +1,4 @@
-/* eslint-disable prettier/prettier */
 import React, { useRef } from 'react'
-import { initializeApp } from 'firebase/app'
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyB7XnDjM6cA1Us4p9PpzgX6tFyFZHmpmJI',
-  authDomain: 'projects-cec6a.firebaseapp.com',
-  databaseURL: 'https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app',
-  projectId: 'projects-cec6a',
-  storageBucket: 'projects-cec6a.appspot.com',
-  messagingSenderId: '815842606771',
-  appId: '1:815842606771:web:16cd1350c43358171abac6',
-}
-
-const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
 
 function LoginForm(props) {
   const emailRef = useRef('')
@@ -25,24 +9,7 @@ function LoginForm(props) {
 
     const email = emailRef.current.value
     const password = passwordRef.current.value
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user
-        console.log(user)
-
-        onAuthStateChanged(auth, (user) => {
-          if (user) {
-            props.onLogin(true)
-          }
-        })
-      })
-      .catch((error) => {
-        const errorCode = error.code
-        const errorMessage = error.message
-        console.log(errorMessage)
-      })
+    props.onLogin(email, password)
   }
 
   return (
