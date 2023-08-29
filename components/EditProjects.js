@@ -82,7 +82,7 @@ function EditProjects(props) {
 
   const handleEditClick = (project) => async (event) => {
     event.preventDefault()
-
+    console.log(project.id)
     const updatedProject = {
       id: project.id,
       title: titleRef.current.value,
@@ -177,7 +177,7 @@ function EditProjects(props) {
                 <button
                   className="rounded-2xl text-center text-black"
                   type="submit"
-                  onClick={handleEditClick}
+                  onClick={handleEditClick(project)}
                 >
                   Edit Project
                 </button>

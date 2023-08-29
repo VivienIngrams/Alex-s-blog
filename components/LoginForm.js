@@ -1,4 +1,8 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+
+import { signInWithEmailAndPassword } from 'firebase/auth'
+
+import auth from 'firebase-config'
 
 function LoginForm(props) {
   const emailRef = useRef('')
@@ -9,7 +13,17 @@ function LoginForm(props) {
 
     const email = emailRef.current.value
     const password = passwordRef.current.value
-    props.onLogin(email, password)
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user
+        console.log(user)
+        props.onLogin()
+      })
+      .catch((error) => {
+        const errorCode = error.code
+        const errorMessage = error.message
+        console.log(errorMessage)
+      })
   }
 
   return (
@@ -44,7 +58,7 @@ function LoginForm(props) {
 
           <div className="m-10 rounded-2xl bg-yellow-600 p-2">
             <button className="rounded-2xl text-center text-black" type="submit">
-              Login
+              Log In
             </button>
           </div>
         </div>
