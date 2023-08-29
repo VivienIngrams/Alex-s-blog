@@ -74,7 +74,7 @@ export default function Projects() {
         </div>
       </div>
       <div className=" pb-2 text-right">
-        <Link href="/login">Login</Link>
+        <Link href="/admin">Admin</Link>
       </div>
     </>
   )

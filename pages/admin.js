@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react'
-
-import { onAuthStateChanged } from 'firebase/auth'
+import { useState } from 'react'
 
 import auth from 'firebase-config'
 
@@ -10,7 +8,6 @@ import EditProjects from '@/components/EditProjects'
 
 function AdminPage() {
   const [logIn, setLogIn] = useState(false)
-  const [user, setUser] = useState(null)
 
   function loginHandler() {
     setLogIn(true)
@@ -37,9 +34,9 @@ function AdminPage() {
 
   return (
     <>
-      {!auth && <LoginForm onLogin={loginHandler} />}
-      {auth && <AddProject onAddProject={addProjectHandler} />}
-      {auth && <EditProjects />}
+      {!logIn && <LoginForm onLogin={loginHandler} />}
+      {logIn && <AddProject onAddProject={addProjectHandler} />}
+      {logIn && <EditProjects />}
     </>
   )
 }
