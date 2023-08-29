@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react'
 
 function AddProject(props) {
-  const [message, setMessage] = useState(null)
-
   const titleRef = useRef('')
   const descriptionRef = useRef('')
   const linkRef = useRef('')
@@ -27,8 +25,6 @@ function AddProject(props) {
 
     props.onAddProject(enteredProject)
 
-    setMessage(true)
-
     setProject({
       title: '',
       description: '',
@@ -43,11 +39,9 @@ function AddProject(props) {
         <h2 className="p-4 text-center font-khand text-2xl font-bold text-neutral-500">
           Add Research Project
         </h2>
-        {message && (
-          <div className="text-center">
-            <p>Project saved to database!</p>
-          </div>
-        )}
+        <div className="text-center">
+          <p>{props.message}</p>
+        </div>
         <div className="flex flex-col items-end ">
           <div className="p-5">
             <label className=" p-2 font-bold font-normal text-black" htmlFor="title">
