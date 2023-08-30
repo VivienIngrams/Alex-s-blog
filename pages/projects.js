@@ -36,7 +36,6 @@ export default function Projects() {
       }
 
       setProjects(projectsData)
-      console.log(projectsData)
     } catch (error) {
       setError(error.message)
     }

@@ -39,9 +39,6 @@ function AddProject(props) {
         <h2 className="p-4 text-center font-khand text-2xl font-bold text-neutral-500">
           Add Research Project
         </h2>
-        <div className="text-center">
-          <p>{props.message}</p>
-        </div>
         <div className="flex flex-col items-end ">
           <div className="p-5">
             <label className=" p-2 font-bold font-normal text-black" htmlFor="title">
@@ -96,6 +93,9 @@ function AddProject(props) {
             ></textarea>
           </div>
 
+          <div className="m-5 text-center">
+            <p>{props.message}</p>
+          </div>
           <div className="mx-10 mb-20 rounded-2xl bg-yellow-600 p-2">
             <button className="rounded-2xl text-center text-black" type="submit">
               Add Project
